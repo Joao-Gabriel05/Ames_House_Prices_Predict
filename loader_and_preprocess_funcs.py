@@ -122,9 +122,8 @@ def preprocessor(data):
     data['TotRms.AbvGrd'] = data['TotRms.AbvGrd'].apply(lambda x: 'More than 10' if x > 10 else x)
     
     data['Fireplaces'] = data['Fireplaces'].apply(lambda x: 'More than 1' if x > 1 else x)
-    data['Fireplaces'].value_counts(normalize=True)
 
-    data['Heating.QC_group'] = data['Heating.QC'].apply(lambda x: 'Fa/Po' if x=='Fa' or x=='Po' else x)
+    data['Heating.QC'] = data['Heating.QC'].apply(lambda x: 'Fa/Po' if x=='Fa' or x=='Po' else x)
 
     data = data[
         (data['Kitchen.AbvGr'] > 0) 
@@ -133,10 +132,11 @@ def preprocessor(data):
     ].copy()
 
     cols = ['Neighborhood', 'House.Style', 'Overall.Qual', 'Full.Bath',
-        'TotRms.AbvGrd', 'Fireplaces', 'Heating.QC', 'Foundation',
-        'Roof.Style', 'Heating.QC_group']
+        'TotRms.AbvGrd', 'Fireplaces', 'Foundation',
+        'Roof.Style', 'Heating.QC','Open.Porch.SF_bin','Kitchen.AbvGr']
 
     data[cols] = data[cols].astype(str)
+    data = data[data['Year.Remod.Add'] > 1950]
 
     return data
     

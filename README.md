@@ -12,3 +12,5 @@ Mais que 0 e menos que 3
 Preço:
 Limite superior: 528901.65
 Limite inferior: 52377.03
+
+Remodelada/ construida depois de 1950
