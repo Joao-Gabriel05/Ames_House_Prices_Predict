@@ -1,16 +1,24 @@
 # Ames_House_Prices_Predict
 
 # Limitações:
-Bairros:
-    ['Blmngtn', 'Veenker', 'NPkVill', 'Blueste', 'Greens', 'GrnHill', 'Landmrk']
-Banheiros:
-Maior que 0
-QUartos: Mais que 3
-Cozinha:
-Mais que 0 e menos que 3
+O modelo foi treinado e validado somente em registros que atendem aos seguintes critérios:
 
-Preço:
-Limite superior: 528901.65
-Limite inferior: 52377.03
+- **Bairros**  
+  Os seguintes bairros não foram inclusos no treinamento do modelo:
+  `Blmngtn`, `Veenker`, `NPkVill`, `Blueste`, `Greens`, `GrnHill`, `Landmrk`
 
-Remodelada/ construida depois de 1950
+- **Banheiros**  
+  - Número de banheiros > 0
+
+- **Quartos**  
+  - Número de quartos > 3
+
+- **Cozinhas**  
+  - Número de cozinhas ≥ 1 e ≤ 3
+
+- **Faixa de Preço**  
+  - Valor mínimo: R\$ 52 377,03  
+  - Valor máximo: R\$ 528 901,65
+
+- **Ano de Construção / Remodelação**  
+  - Somente imóveis construídos ou reformados a partir de 1950
